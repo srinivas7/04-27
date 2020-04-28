@@ -1,0 +1,31 @@
+
+#vidcontent {
+  width:500;
+  height:281;
+  border:2px solid black;
+  object-fit:cover; /* for those who do support it */
+}
+
+.heading {
+  padding: 2px;
+  text-align: center;
+  background-color: rgb(56, 75, 102);
+  color: lightgrey;
+}
+
+.button {
+  padding: 4px;
+  text-align: center;
+  background-color: rgb(56, 75, 102);
+  color: lightgrey;
+}
+
+.event-label {
+  margin-top: 2px;
+}
+.event-info {
+  margin-top: -10px;
+}
+.charts {
+  margin-top: 5px;
+}
