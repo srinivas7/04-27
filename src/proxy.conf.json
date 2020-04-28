@@ -1,9 +1,0 @@
-{
-    "/api": {
-      "target": "http://vzc-gps-trail-api.or.prd.dat.aws.vz-connect.net:8080",
-      "secure": false,
-      "pathRewrite": {
-        "^/api": ""
-      }
-    }
-}
