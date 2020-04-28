@@ -1,0 +1,61 @@
+<div class="container-fluid mt-1">
+  <div class="row">
+    <div class="col-md-2 event-label">
+      <label>Dongle Event: </label>
+    </div>
+    <div class="col-md-2 event-info">
+      <input type="text" class="form-control mt-1" value="AC" disabled />
+    </div>
+
+    <div class="col-md-2 event-label">
+      <label>Model Event: </label>
+    </div>
+    <div class="col-md-2 event-info">
+      <input type="text" class="form-control mt-1" value="BR" disabled />
+    </div>
+
+    <div class="col-md-2 event-label">
+      <label>Reclassify: </label>
+    </div>
+    <div class="col-md-2 event-info">
+      <input type="text" class="form-control mt-1" />
+    </div>
+
+  </div>
+  <div class="row charts">
+    <div class="col-md-6">
+      <h4 class="heading">Event Video</h4>
+      <div border-width:20px>
+        <video id="vidcontent" width="600" height="250" controls loop>
+          <source src="https://vzc-dat-video-hde-output-sbx.s3.amazonaws.com/357819090053200/1584055895.MP4"
+            type="video/mp4">
+        </video>
+      </div>
+    </div>
+    <div class="col-md-6" (click)="mapClick('first')">
+      <h4 class="heading">Accel X</h4>
+      <div>
+        <app-chart [type]="first"></app-chart>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6" (click)="mapClick('third')">
+      <h4 class="heading">Speed</h4>
+      <div>
+        <app-chart [type]="third"></app-chart>
+      </div>
+    </div>
+    <div class="col-md-6" (click)="mapClick('second')">
+      <h4 class="heading">Accel Y</h4>
+      <div>
+        <app-chart [type]="second"></app-chart>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-1">
+    <div class="col-md-11"> <button class="button" ><<Previous</button> </div>
+    <div class="col-m1-2"> <button class="button" >Next>></button> </div>
+ </div>
+</div>
