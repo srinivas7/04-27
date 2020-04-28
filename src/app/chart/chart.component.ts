@@ -3,6 +3,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
 import { Label, Color } from 'ng2-charts';
 import { HttpClient } from '@angular/common/http';
+import {DynamicDialogConfig} from 'primeng/dynamicdialog';
 
 @Component({
   selector: 'app-chart',
@@ -10,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./chart.component.css']
 })
 export class ChartComponent implements OnInit {
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,  public config: DynamicDialogConfig) { }
   @Input() type;
   public lineChartData: ChartDataSets[] = [
     { data: [], label: 'RAW', yAxisID: 'yAxis1' },
@@ -57,13 +58,16 @@ export class ChartComponent implements OnInit {
   }
 
   private buildChartData() {
-    const promise = this.http.get("assets/graphs.json").toPromise();
-    promise.then((res) => {
-      this.graphJson = res;
-      this.generateAccelData(res);
-    }).catch((error) => {
-      console.log("Promise rejected with " + JSON.stringify(error));
-    });
+    console.log('this.config.data.tripEvents', this.config.data.tripEvents);
+    this.graphJson = this.config.data.tripEvents;
+    this.generateAccelData(this.graphJson);
+    // const promise = this.http.get("assets/graphs.json").toPromise();
+    // promise.then((res) => {
+    //   this.graphJson = res;
+    //   this.generateAccelData(res);
+    // }).catch((error) => {
+    //   console.log("Promise rejected with " + JSON.stringify(error));
+    // });
   }
 
   generateAccelData(data) {

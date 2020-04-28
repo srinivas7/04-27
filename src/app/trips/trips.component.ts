@@ -27,6 +27,7 @@ export class TripsComponent implements OnInit {
   public tripStartDate: Date = new Date();
   minDate: Date;
   maxDate: Date;
+  graphJson: any;
 
   //public base_url_trip: string = 'http://private-d9743-hum1.apiary-mock.com/HTIWebGateway/vv/rest/DrivingHistory/getDrivingHistoryEvents';
   //public base_url_trip: string = 'https://apix-uat.vtitel.net/HTIWebGateway/vv/rest/DrivingHistory/getDrivingHistoryEvents';
@@ -46,8 +47,10 @@ export class TripsComponent implements OnInit {
     this.getAllTrips();
     this.generateMapData();
     this.getTripEvents();
+    
   }
 
+ 
   private getCustomer() {
     this.route.params.subscribe(params => {
       this.userId = params['userId'];
@@ -170,9 +173,7 @@ export class TripsComponent implements OnInit {
 }
 show() {
   const ref = this.dialogService.open(EventDetailsComponent, {
-      data: {
-        id: '51gF3'
-      },
+      
       width: '40%',
       showHeader: true,
       closable: true,

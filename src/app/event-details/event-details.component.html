@@ -32,7 +32,7 @@
         </video>
       </div>
     </div>
-    <div class="col-md-6" (click)="mapClick('first')">
+    <div class="col-md-6 pointer" (click)="mapClick('first')">
       <h4 class="heading">Accel X</h4>
       <div>
         <app-chart [type]="first"></app-chart>
@@ -40,13 +40,13 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-6" (click)="mapClick('third')">
+    <div class="col-md-6 pointer" (click)="mapClick('third')">
       <h4 class="heading">Speed</h4>
       <div>
         <app-chart [type]="third"></app-chart>
       </div>
     </div>
-    <div class="col-md-6" (click)="mapClick('second')">
+    <div class="col-md-6 pointer" (click)="mapClick('second')">
       <h4 class="heading">Accel Y</h4>
       <div>
         <app-chart [type]="second"></app-chart>

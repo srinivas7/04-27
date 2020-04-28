@@ -142,7 +142,10 @@ export class MapComponent implements OnInit, AfterViewInit {
           const ref = this.mapDialogService.open(EventDetailsComponent, {
             width: '90%',
             showHeader: true,
-            closable: true
+            closable: true,
+            data: {
+              tripEvents: this.tripEvents
+            }
         });
         });
       markers.addLayer(marker);

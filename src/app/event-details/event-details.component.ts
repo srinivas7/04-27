@@ -16,7 +16,9 @@ export class EventDetailsComponent implements OnInit {
   second: string = 'second';
   third: string = 'third';
   constructor( public eventDialogService: DialogService, public config: DynamicDialogConfig, public ref: DynamicDialogRef) {}
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log('trip events from event detail',this.config.data.tripEvents)
+  }
 
   mapClick(type:string) {
     console.log('from event details...', this.config, this.ref);
@@ -24,7 +26,10 @@ export class EventDetailsComponent implements OnInit {
       width: '90%',
       showHeader: true,
       closable: true,
-      data: {'type': type}
+      data: {
+        'type': type,
+        'tripEvents': this.config.data.tripEvents
+      }
   });
   }
 }
