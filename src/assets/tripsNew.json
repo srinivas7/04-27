@@ -1,0 +1,138 @@
+{
+    "header": {
+        "sourceName": "android",
+        "transactionId": "1038846624877909282678640744792019040101",
+        "timestamp": "2019-03-26T14:05:07.951-04:00",
+        "organization": "hum",
+        "region": "US",
+        "applicationName": "mapp"
+    },
+    "response": {
+        "responseCode": "2000",
+        "responseDescription": "Success",
+        "responseStatus": "SUCCESS"
+    },
+    "dataArea": {
+        "componentSummaries": [],
+        "summaryType": "day",
+        "overallSummary": {
+            "startDate": "2020-04-28",
+            "endDate": "2020-04-28",
+            "tripDuration": 1143,
+            "totalDistance": 5,
+            "idleTime": 529,
+            "mpg": 18,
+            "fuelConsumed": 0.3,
+            "cityMpg": 18,
+            "highwayMpg": 0,
+            "averageSpeed": 16,
+            "maxSpeed": 66,
+            "epaCity": 0,
+            "epaHwy": 0,
+            "evtDetails": null,
+            "events": {
+                "AC": 0,
+                "ALL": 6,
+                "BR": 2,
+                "HS": 3,
+                "LC": 1,
+                "RC": 0
+            },
+            "safetyScore": 40
+        },
+        "trips": [
+            {
+                "tripDate": "2020-04-28",
+                "tripId": "5dc3d479-7e67-3f2b-ba54-16be68f446b6",
+                "startTime": "2020-04-28T15:34:18",
+                "endTime": "2020-04-28T15:53:21",
+                "eventDate": null,
+                "startLatitude": 34.1215501,
+                "startLongitude": -84.116251,
+                "endLatitude": 34.1216121,
+                "endLongitude": -84.116276,
+                "tripDuration": 1143,
+                "idleTime": 529,
+                "maxSpeed": 66,
+                "fuelUsed": 0.3,
+                "gallons": 0.0,
+                "averageSpeed": 16,
+                "tripDistance": 5,
+                "mpg": 18,
+                "cityMpg": 0,
+                "hwyMpg": 0,
+                "cityDistance": 5,
+                "hwyDistance": 0,
+                "epaCity": 0,
+                "epaHwy": 0,
+                "tripTag": "",
+                "startLocation": "1520 Eaglerock Dr|Suwanee|GA|30024",
+                "endLocation": "1520 Eaglerock Dr|Suwanee|GA|30024",
+                "sttz": null,
+                "entz": null,
+                "evtDetails": {
+                    "events": [
+                        [
+                            1.588088614E9,
+                            -4.0,
+                            34.1297924,
+                            -84.097719,
+                            "LC",
+                            null
+                        ],
+                        [
+                            1.588088418E9,
+                            -4.0,
+                            34.1233187,
+                            -84.104374,
+                            "HS",
+                            65.87
+                        ],
+                        [
+                            1.588088343E9,
+                            -4.0,
+                            34.1178134,
+                            -84.117125,
+                            "BR",
+                            null
+                        ],
+                        [
+                            1.588088871E9,
+                            -4.0,
+                            34.1348893,
+                            -84.099672,
+                            "HS",
+                            65.87
+                        ],
+                        [
+                            1.588088632E9,
+                            -4.0,
+                            34.133094,
+                            -84.098934,
+                            "HS",
+                            64.62
+                        ],
+                        [
+                            1.588088779E9,
+                            -4.0,
+                            34.1359417,
+                            -84.102136,
+                            "BR",
+                            null
+                        ]
+                    ]
+                },
+                "events": {
+                    "AC": 0,
+                    "ALL": 6,
+                    "BR": 2,
+                    "HS": 3,
+                    "LC": 1,
+                    "RC": 0
+                },
+                "safetyScore": 40
+            }
+        ],
+        "preWeekOverallSummary": null
+    }
+}

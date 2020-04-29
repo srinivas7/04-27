@@ -28,6 +28,7 @@ export class TripsComponent implements OnInit {
   minDate: Date;
   maxDate: Date;
   graphJson: any;
+  eventStartTime: any;
 
   //public base_url_trip: string = 'http://private-d9743-hum1.apiary-mock.com/HTIWebGateway/vv/rest/DrivingHistory/getDrivingHistoryEvents';
   //public base_url_trip: string = 'https://apix-uat.vtitel.net/HTIWebGateway/vv/rest/DrivingHistory/getDrivingHistoryEvents';
@@ -86,7 +87,7 @@ export class TripsComponent implements OnInit {
     //   this.tripsList = data.data;
     // });
 
-    this.apiService.getJson('assets/trips.json').subscribe(res => {
+    this.apiService.getJson('assets/tripsNew.json').subscribe(res => {
       this.tripsList = res;
     });
   }
@@ -111,20 +112,22 @@ export class TripsComponent implements OnInit {
     //   console.log(data);
     // })
 
-    this.apiService.getJson('assets/map.json').subscribe(res => {
+    this.apiService.getJson('assets/mapNew.json').subscribe(res => {
       this.mapsData = res;
     });
   }
 
   getTripEvents() {
-    this.apiService.getJson('assets/graphs.json').subscribe(res => {
+    this.apiService.getJson('assets/eventsgraphNew.json').subscribe(res => {
       this.tripEvents = res;
     });
   }
 
   public showMap(selected: any) {
     this.mapsData.imei.trips.forEach(element => {
-      if (selected.startTime == element.tripStart) {
+      var stTime = new Date(selected.startTime)
+      this.eventStartTime = 1588102437; //stTime.getTime()/1000.0;
+     if (this.eventStartTime == element.tripStart) {
         this.trip = element;
       }
     });

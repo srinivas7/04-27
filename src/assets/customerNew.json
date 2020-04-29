@@ -1,0 +1,48 @@
+{
+  "CustDeviceList": [
+    {
+      "imei": "357819092429440",
+      "firstname": "Test",
+      "lastname": "lightup",
+      "email": "tester1@test.com",
+      "year": "2014",
+      "make": "BMW",
+      "model": "3 SERIES",
+      "userId": "1-1I3KWAR",
+      "vehicleId": "1-1I3KXA7",
+      "accountId": "",
+      "vin": "",
+      "serviceId":""
+    },
+    {
+      "imei": "357819093357087",
+      "firstname": "Retail",
+      "lastname": "HumPro",
+      "email": "tester2@test.com",
+      "year": "2017",
+      "make": "Lexus",
+      "model": "Rx350",
+      "color": "Black",
+      "userid": "1-1B8S31W",
+      "vehicleId": "1-1BQVJYH",
+      "accountId": "1353008365",
+      "vin": "4JGDA5JB7HA863620",
+      "serviceId":""
+    },
+    {
+      "imei": "357819090053200",
+      "firstname": "Nishitha",
+      "lastname": "Nalla",
+      "email": "tester@test.com",
+      "year": "2019",
+      "make": "Lexus",
+      "model": "Nx300",
+      "color": "Red",
+      "userid": "1-1C7GOPE",
+      "vehicleId": "1-1C7GPV7",
+      "accountId": "",
+      "vin": "",
+      "serviceId":""
+    }
+  ]
+}

@@ -15,9 +15,12 @@ export class EventDetailsComponent implements OnInit {
   first: string = 'first';
   second: string = 'second';
   third: string = 'third';
+  clickedEventInfo: any;
+  clickedEventIndex: number;
   constructor( public eventDialogService: DialogService, public config: DynamicDialogConfig, public ref: DynamicDialogRef) {}
   ngOnInit(): void {
-    console.log('trip events from event detail',this.config.data.tripEvents)
+    console.log('trip events from event detail',this.config.data.tripEvents);
+    this.clickedEventInfo = this.config.data.event;
   }
 
   mapClick(type:string) {
@@ -31,5 +34,18 @@ export class EventDetailsComponent implements OnInit {
         'tripEvents': this.config.data.tripEvents
       }
   });
+  }
+
+  eventIndex(event){
+    console.log(event);
+    this.clickedEventIndex = parseInt(event);
+  }
+
+  nextEvent() {
+    console.log(this.clickedEventIndex++);
+  }
+
+  previousEvent() {
+    console.log(this.clickedEventIndex--);
   }
 }

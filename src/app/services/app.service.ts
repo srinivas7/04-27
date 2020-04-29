@@ -31,7 +31,7 @@ export class AppService {
     sessionStorage.setItem('info', JSON.stringify(this.storageData));
   }
 
-  getGraphsData() {
-    return this.http.get("assets/graphs.json").toPromise();
-  }
+  // getGraphsData() {
+  //   return this.http.get("assets/eventsgraphNew.json").toPromise();
+  // }
 }

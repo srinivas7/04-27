@@ -17,7 +17,7 @@ export class CustomerComponent implements OnInit {
     this.getCustomers();
   }
   private getCustomers() {
-    this.apiService.getJson('assets/customer.json').subscribe(data => {
+    this.apiService.getJson('assets/customerNew.json').subscribe(data => {
       let result = data as any;
       this.customerList = result.CustDeviceList as Customer[];
       this.customerListCopy = this.customerList;

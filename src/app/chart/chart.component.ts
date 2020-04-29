@@ -1,9 +1,10 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
 import { Label, Color } from 'ng2-charts';
 import { HttpClient } from '@angular/common/http';
 import {DynamicDialogConfig} from 'primeng/dynamicdialog';
+
 
 @Component({
   selector: 'app-chart',
@@ -13,6 +14,18 @@ import {DynamicDialogConfig} from 'primeng/dynamicdialog';
 export class ChartComponent implements OnInit {
   constructor(private http: HttpClient,  public config: DynamicDialogConfig) { }
   @Input() type;
+  @Input() clickedEventInfo;
+  @Output() eventIndex = new EventEmitter();
+  @Input('clickedEventIndex')
+  set updateEventDetails(value) {
+    // console.log('from update event details', this.eventDetails[value]);
+    this.clickedEvent = this.eventDetails[value];
+    this.updateMaps();
+  }
+
+  eventDetails;
+  clickedEvent;
+  clickedEventIndex = 0;
   public lineChartData: ChartDataSets[] = [
     { data: [], label: 'RAW', yAxisID: 'yAxis1' },
     { data: [], label: 'SMOOTH', yAxisID: 'yAxis1' }
@@ -70,13 +83,13 @@ export class ChartComponent implements OnInit {
     // });
   }
 
-  generateAccelData(data) {
-
-    let accelLength = data.eventDetails[0].accel.length + 1;
+  updateMaps() {
+    this.lineChartLabels = [];
+    let accelLength = this.clickedEvent.accel.length + 1;
     for (let index = 0; index < accelLength; index++) {
       this.lineChartLabels.push(String(index));
     }
-    data.eventDetails[0].accel.forEach(element => {
+    this.clickedEvent.accel.forEach(element => {
       if (this.type === 'first') {
         this.lineChartData[0].data.push(element[1]);
         this.lineChartData[1].data.push(element[4]);
@@ -85,12 +98,28 @@ export class ChartComponent implements OnInit {
         this.lineChartData[1].data.push(element[5]);
       }
     });
-    data.eventDetails[0].speed.forEach(element => {
-      if (this.type === 'third') {
-        this.lineChartData[0].data.push(element[0]);
+    // this.clickedEvent.speed.forEach(element => {
+    //   if (this.type === 'third') {
+    //     this.lineChartData[0].data.push(element[0]);
+    //   }
+    // });
+  }
+
+  generateAccelData(data) {
+    console.log('clicked event info is..', this.clickedEventInfo);
+    this.eventDetails = data.eventDetails;
+    data.eventDetails.forEach((element, index) => {
+      if(element.gpsLatitude === this.clickedEventInfo.latlng.lat && element.gpsLongitude === this.clickedEventInfo.latlng.lng) {
+        this.clickedEvent = element;
+        this.clickedEventIndex = index;
+        this.eventIndex.emit(this.clickedEventIndex+'');
       }
     });
+    this.updateMaps();
+    
   }
+
+  
 
   generateAccelDataNew(data) {
     data.eventDetails.forEach(element => {
@@ -114,6 +143,6 @@ export class ChartComponent implements OnInit {
         })
       }
     }
-  })
+  });
   }
 }

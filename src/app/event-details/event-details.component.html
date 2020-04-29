@@ -35,7 +35,7 @@
     <div class="col-md-6 pointer" (click)="mapClick('first')">
       <h4 class="heading">Accel X</h4>
       <div>
-        <app-chart [type]="first"></app-chart>
+        <app-chart [type]="first" (eventIndex)="eventIndex($event)" [clickedEventIndex]="clickedEventIndex" [clickedEventInfo]="clickedEventInfo"></app-chart>
       </div>
     </div>
   </div>
@@ -43,19 +43,19 @@
     <div class="col-md-6 pointer" (click)="mapClick('third')">
       <h4 class="heading">Speed</h4>
       <div>
-        <app-chart [type]="third"></app-chart>
+        <app-chart [type]="third" (eventIndex)="eventIndex($event)" [clickedEventIndex]="clickedEventIndex" [clickedEventInfo]="clickedEventInfo"></app-chart>
       </div>
     </div>
     <div class="col-md-6 pointer" (click)="mapClick('second')">
       <h4 class="heading">Accel Y</h4>
       <div>
-        <app-chart [type]="second"></app-chart>
+        <app-chart [type]="second" (eventIndex)="eventIndex($event)" [clickedEventIndex]="clickedEventIndex" [clickedEventInfo]="clickedEventInfo"></app-chart>
       </div>
     </div>
   </div>
 
   <div class="row mt-1">
-    <div class="col-md-11"> <button class="button" ><<Previous</button> </div>
-    <div class="col-m1-2"> <button class="button" >Next>></button> </div>
+    <div class="col-md-11"> <button class="button" (click)="previousEvent()" ><<Previous</button> </div>
+    <div class="col-m1-2"> <button class="button" (click)="nextEvent()">Next>></button> </div>
  </div>
 </div>

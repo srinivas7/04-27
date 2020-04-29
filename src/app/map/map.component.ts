@@ -139,12 +139,14 @@ export class MapComponent implements OnInit, AfterViewInit {
       })
         .openPopup();
         marker.addEventListener("click", (event: Event) => {
+          console.log(event);
           const ref = this.mapDialogService.open(EventDetailsComponent, {
             width: '90%',
             showHeader: true,
             closable: true,
             data: {
-              tripEvents: this.tripEvents
+              tripEvents: this.tripEvents,
+              event: event
             }
         });
         });
