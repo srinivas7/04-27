@@ -23,6 +23,7 @@ import {CommonModule} from '@angular/common';
 import {PaginatorModule} from 'primeng/paginator';
 import {CardModule} from 'primeng/card';
 import { ZoomComponent } from './zoom/zoom.component';
+import {TableModule} from 'primeng/table';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { ZoomComponent } from './zoom/zoom.component';
     CommonModule,
     DynamicDialogModule,
     PaginatorModule,
-    CardModule
+    CardModule,
+    TableModule
   ],
   providers: [AppService,DateFormatPipe],
   bootstrap: [AppComponent],
