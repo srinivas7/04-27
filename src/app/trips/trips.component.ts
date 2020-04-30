@@ -175,11 +175,11 @@ export class TripsComponent implements OnInit {
 
 }
 show() {
-  const ref = this.dialogService.open(EventDetailsComponent, {
+  // const ref = this.dialogService.open(EventDetailsComponent, {
       
-      width: '40%',
-      showHeader: true,
-      closable: true,
-  });
+  //     width: '40%',
+  //     showHeader: true,
+  //     closable: true,
+  // });
 }
 }

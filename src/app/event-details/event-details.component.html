@@ -55,7 +55,7 @@
   </div>
 
   <div class="row mt-1">
-    <div class="col-md-11"> <button class="button" (click)="previousEvent()" ><<Previous</button> </div>
-    <div class="col-m1-2"> <button class="button" (click)="nextEvent()">Next>></button> </div>
+    <div class="col-md-11"> <button [ngClass]="clickedEventIndex <= 0 ? 'disable':''" [disabled]="clickedEventIndex <= 0" class="button" (click)="previousEvent()" ><<Previous</button> </div>
+    <div class="col-m1-2"> <button [ngClass]="clickedEventIndex >= tripEvents.eventDetails?.length-1 ? 'disable':''" [disabled]="clickedEventIndex > tripEvents.eventDetails?.length" class="button" (click)="nextEvent()">Next>></button> </div>
  </div>
 </div>

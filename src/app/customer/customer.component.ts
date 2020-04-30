@@ -32,6 +32,6 @@ export class CustomerComponent implements OnInit {
   }
   public navigateToTrip(customer:Customer){
     this.apiService.setStorage(customer);
-    this.router.navigate(['/trips',customer.userid]);
+    this.router.navigate(['/trips',customer['userId']]);
   }
 }

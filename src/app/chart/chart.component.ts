@@ -18,9 +18,11 @@ export class ChartComponent implements OnInit {
   @Output() eventIndex = new EventEmitter();
   @Input('clickedEventIndex')
   set updateEventDetails(value) {
-    // console.log('from update event details', this.eventDetails[value]);
-    this.clickedEvent = this.eventDetails[value];
-    this.updateMaps();
+    if(this.eventDetails && value) {
+      this.clickedEvent = this.eventDetails[value];
+      this.updateMaps();
+    }
+    
   }
 
   eventDetails;
@@ -85,6 +87,10 @@ export class ChartComponent implements OnInit {
 
   updateMaps() {
     this.lineChartLabels = [];
+    this.lineChartData = [
+      { data: [], label: 'RAW', yAxisID: 'yAxis1' },
+      { data: [], label: 'SMOOTH', yAxisID: 'yAxis1' }
+    ];
     let accelLength = this.clickedEvent.accel.length + 1;
     for (let index = 0; index < accelLength; index++) {
       this.lineChartLabels.push(String(index));

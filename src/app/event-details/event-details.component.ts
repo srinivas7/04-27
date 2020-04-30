@@ -16,15 +16,15 @@ export class EventDetailsComponent implements OnInit {
   second: string = 'second';
   third: string = 'third';
   clickedEventInfo: any;
-  clickedEventIndex: number;
+  clickedEventIndex: number = 0;
+  tripEvents;
   constructor( public eventDialogService: DialogService, public config: DynamicDialogConfig, public ref: DynamicDialogRef) {}
   ngOnInit(): void {
-    console.log('trip events from event detail',this.config.data.tripEvents);
     this.clickedEventInfo = this.config.data.event;
+    this.tripEvents = this.config.data.tripEvents;
   }
 
   mapClick(type:string) {
-    console.log('from event details...', this.config, this.ref);
     const ref = this.eventDialogService.open(ZoomComponent, {
       width: '90%',
       showHeader: true,
