@@ -1,8 +1,16 @@
 <div class="container-fluid">
   <!-- <h2 class="heading" (click)="show()">Driving History</h2> -->
   <div class="row mt-2">
-    <p-card class="col-md-3 text-center">
-      <b> Driving History</b>
+    <p-card class="col-md-4 text-center">
+      <div class="col-md-12 info calender-box" >
+        <span  (click)="previousDate()">
+          <span><i class="fa fa-angle-left"></i></span>
+        </span>
+        <p-calendar [(ngModel)]="tripStartDate" [minDate]="minDate" [maxDate]="maxDate"  dateFormat="DD MM dd ,yy" [showIcon]='true' style ></p-calendar>
+        <span class="calender-right col col-1 text-center nopadding" (click)="nextDate()">
+          <span><i class="fa fa-angle-right"></i></span>
+        </span>
+      </div>
      </p-card>
     <p-card class="offset-md-1 col-md-2 text-center">
       <b>Driver :</b>  {{customer?.firstname}}

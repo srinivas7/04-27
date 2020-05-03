@@ -145,8 +145,8 @@ export class MapComponent implements OnInit, AfterViewInit {
             showHeader: true,
             closable: true,
             data: {
-              tripEvents: this.tripEvents,
-              event: event
+              
+              eventInfo: event
             }
         });
         });

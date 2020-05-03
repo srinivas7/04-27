@@ -20,7 +20,7 @@ export class EventDetailsComponent implements OnInit {
   tripEvents;
   constructor( public eventDialogService: DialogService, public config: DynamicDialogConfig, public ref: DynamicDialogRef) {}
   ngOnInit(): void {
-    this.clickedEventInfo = this.config.data.event;
+    this.clickedEventInfo = this.config.data.eventInfo;
     this.tripEvents = this.config.data.tripEvents;
   }
 

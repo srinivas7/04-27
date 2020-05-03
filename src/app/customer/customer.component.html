@@ -23,7 +23,7 @@
     [paginator]="true"
     [responsive]="true" 
     [rows]="1" 
-    [totalRecords]="customerList.length">
+    [totalRecords]="customerList?.length">
         <ng-template pTemplate="header">
             <tr>
                 <th>Name</th>
@@ -35,7 +35,7 @@
             </tr>
         </ng-template>
         <ng-template pTemplate="body" let-c>
-            <tr>
+            <tr (click)="navigateToTrip(c)">
                 <td>{{c.firstname}} {{c.lastname}}</td>
                 <td>{{c.email}}</td>
                 <td>{{c.imei}}</td>
